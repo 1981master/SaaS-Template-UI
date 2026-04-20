@@ -1,0 +1,26 @@
+/* =========================
+   themes/light.css
+========================= */
+
+html[data-theme='light'] {
+    /* background */
+    --bg: #ffffff;
+    --surface: #f9fafb;
+    --surface-2: #f3f4f6;
+
+    /* text */
+    --text: #111827;
+    --text-muted: #6b7280;
+
+    /* brand */
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+
+    /* borders */
+    --border: #e5e7eb;
+
+    /* status */
+    --success: #16a34a;
+    --warning: #f59e0b;
+    --error: #ef4444;
+}

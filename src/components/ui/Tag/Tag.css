@@ -1,0 +1,21 @@
+.tag {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--tag-color);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+    user-select: none;
+    white-space: nowrap;
+}
+
+.tag.pill {
+    border-radius: var(--radius-xl);
+}
+
+.tag:hover {
+    filter: brightness(1.1);
+    cursor: default;
+}

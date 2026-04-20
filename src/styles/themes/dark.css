@@ -1,0 +1,22 @@
+/* =========================
+   themes/dark.css
+   LAYER 3: DARK THEME
+========================= */
+
+[data-theme='dark'] {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-2: #273449;
+
+    --text: #f8fafc;
+    --text-muted: #94a3b8;
+
+    --primary: #6366f1;
+    --primary-hover: #818cf8;
+
+    --border: #334155;
+
+    --success: #22c55e;
+    --warning: #facc15;
+    --error: #f87171;
+}

@@ -1,0 +1,117 @@
+/* WRAPPER */
+.progress {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-family: var(--font-family);
+}
+
+/* TRACK */
+.progress-track {
+    width: 100%;
+    background: var(--surface-2);
+    border-radius: 999px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+/* FILL */
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s ease;
+    border-radius: 999px;
+}
+
+/* =========================
+   SIZES
+========================= */
+
+.progress-sm {
+    height: 6px;
+}
+
+.progress-md {
+    height: 10px;
+}
+
+.progress-lg {
+    height: 14px;
+}
+
+/* =========================
+   VARIANTS
+========================= */
+
+.progress-primary {
+    background: var(--primary);
+}
+
+.progress-secondary {
+    background: var(--text-muted);
+}
+
+.progress-success {
+    background: var(--success);
+}
+
+.progress-danger {
+    background: var(--error);
+}
+
+/* =========================
+   LABEL
+========================= */
+
+.progress-label {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* =========================
+   🔥 INDETERMINATE ANIMATION
+========================= */
+
+.progress-indeterminate {
+    position: relative;
+    width: 40% !important;
+    animation: indeterminateMove 1.2s infinite ease-in-out;
+}
+
+.progress-indeterminate::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.35),
+        transparent
+    );
+
+    animation: shimmer 1.2s infinite;
+}
+
+/* MOVE BAR LEFT -> RIGHT */
+@keyframes indeterminateMove {
+    0% {
+        transform: translateX(-120%);
+    }
+    50% {
+        transform: translateX(30%);
+    }
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+/* LIGHT SHIMMER EFFECT */
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}

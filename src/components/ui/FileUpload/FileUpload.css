@@ -1,0 +1,81 @@
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    font-family: var(--font-family);
+}
+
+.table-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 16px;
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-family);
+}
+
+/* Table header */
+.custom-table th,
+.custom-table td {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db; /* light border */
+    text-align: left;
+    background: #ffffff;
+    color: #111827;
+    transition: 0.25s ease;
+}
+
+.custom-table th {
+    background: #7febac; /* light gray header */
+    font-weight: 600;
+    color: #111827;
+}
+
+/* Even / Odd rows */
+.custom-table tbody tr:nth-child(odd) td {
+    background: #bdeeaa; /* white */
+    color: #111827;
+}
+
+.custom-table tbody tr:nth-child(even) td {
+    background: #f9fafb; /* very light gray */
+    color: #111827;
+}
+
+/* Hover effect for rows */
+.custom-table tbody tr:hover td {
+    background: #e5e7eb; /* slightly darker on hover */
+}
+
+/* Editable input inside table */
+.custom-table input[type='text'] {
+    width: 100%;
+    padding: 4px 8px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #111827;
+    font-family: var(--font-family);
+}
+
+/* Action buttons container */
+.table-actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Add row button */
+.table-add-btn {
+    margin-top: 16px;
+    display: inline-flex;
+}
+
+/* Optional: responsive overflow */
+@media (max-width: 768px) {
+    .custom-table th,
+    .custom-table td {
+        padding: 8px;
+    }
+}

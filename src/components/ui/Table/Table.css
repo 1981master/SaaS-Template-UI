@@ -1,0 +1,119 @@
+/* Table wrapper */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    font-family: var(--font-family);
+}
+
+/* Table header container (Add button, etc.) */
+.table-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: var(--space-3);
+}
+
+/* Core table */
+.custom-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background: var(--surface);
+}
+
+/* Header row */
+.custom-table thead tr {
+    background: var(--surface-2);
+}
+
+.custom-table-header th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-weight: 600;
+    border-bottom: 2px solid var(--border);
+}
+
+/* Rows */
+.custom-table tbody tr {
+    transition: background 0.2s;
+}
+
+/* Light theme */
+[data-theme='light'] .custom-table-header th {
+    background: #e5e7eb;
+    color: #111827;
+    border-bottom: 2px solid #d1d5db;
+}
+
+[data-theme='light'] .even-row {
+    background: #f9fafb;
+    color: #111827;
+}
+
+[data-theme='light'] .odd-row {
+    background: #ffffff;
+    color: #111827;
+}
+
+/* Dark theme */
+[data-theme='dark'] .custom-table-header th {
+    background: #5ce034;
+    color: #f8fafc;
+    border-bottom: 2px solid #334155;
+}
+
+[data-theme='dark'] .even-row {
+    background: #273449;
+    color: #f8fafc;
+}
+
+[data-theme='dark'] .odd-row {
+    background: #1e293b;
+    color: #f8fafc;
+}
+
+/* Cells */
+.custom-table td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Remove bottom border for last row */
+.custom-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Hover effect */
+.custom-table tbody tr:hover {
+    background: var(--surface-2);
+}
+
+/* Action buttons cell */
+.table-actions {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* Editable input inside table */
+.custom-table input {
+    width: 100%;
+    padding: var(--space-1) var(--space-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text);
+    font-family: var(--font-family);
+}
+
+/* Add Row Button overrides */
+.table-header .btn {
+    font-weight: 500;
+}
+/* Table add row button container */
+.table-add-row {
+    display: flex;
+    justify-content: flex-end; /* aligns button to right */
+    margin-bottom: var(--space-3);
+}

@@ -1,0 +1,60 @@
+.tabs-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: var(--font-family);
+}
+
+/* Header container */
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    /* remove gap so tabs touch each other */
+}
+
+/* Tab items */
+.tab-item {
+    padding: var(--space-2) var(--space-4);
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-bottom: none; /* so it looks connected to content */
+    background: var(--surface-2);
+    color: var(--text);
+    transition: all 0.25s ease;
+    text-align: center;
+    position: relative;
+}
+
+/* Rounded corners for first and last tabs */
+.rounded-tabs .tab-item:first-child {
+    border-top-left-radius: var(--radius-md);
+}
+.rounded-tabs .tab-item:last-child {
+    border-top-right-radius: var(--radius-md);
+}
+
+/* Active tab */
+.tab-item.active-tab {
+    background: var(--tab-color);
+    color: #fff;
+    border-color: var(--tab-color);
+    border-bottom: 1px solid var(--surface); /* merges with content */
+    z-index: 2; /* appear on top of content border */
+}
+
+/* Hover effect */
+.tab-item:hover {
+    background: var(--surface-3);
+}
+
+/* Content area */
+.tabs-content {
+    padding: var(--space-4);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    margin-top: -1px; /* overlaps the bottom of active tab */
+    flex: 1;
+    position: relative;
+    z-index: 1;
+}

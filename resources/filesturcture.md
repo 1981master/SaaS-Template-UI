@@ -2,7 +2,7 @@ src/
 │
 ├── app/
 │ ├── App.jsx
-│ ├── main.jsx / index.jsx
+│ ├── main.jsx
 │ │
 │ ├── providers/
 │ │ ├── StoreProvider/
@@ -52,10 +52,9 @@ src/
 │ ├── light.css
 │ └── dark.css
 │
-│
 ├── store/
-│ ├── index.js # configureStore
-│ ├── hooks.js # useDispatch/useSelector
+│ ├── index.js
+│ ├── hooks.js
 │ ├── rootReducer.js
 │ ├── persist.js
 │ │
@@ -70,7 +69,6 @@ src/
 │ ├── uiSlice.js
 │ ├── themeSlice.js
 │ └── index.js
-│
 │
 ├── modules/
 │ ├── auth/
@@ -89,15 +87,21 @@ src/
 │ ├── settings/
 │ └── index.js
 │
-│
 ├── components/
 │ ├── ui/
 │ │ ├── Button/
 │ │ ├── Input/
+│ │ ├── Textarea/
 │ │ ├── Modal/
 │ │ ├── Toast/
 │ │ ├── Tooltip/
 │ │ ├── Spinner/
+│ │ ├── ProgressBar/
+│ │ ├── Checkbox/
+│ │ ├── Radio/
+│ │ ├── Switch/
+│ │ ├── FileUpload/
+│ │ ├── DateTimePicker/
 │ │ └── index.js
 │ │
 │ ├── composites/
@@ -109,7 +113,6 @@ src/
 │ │ └── index.js
 │ │
 │ └── index.js
-│
 │
 ├── api/
 │ ├── client/
@@ -124,7 +127,6 @@ src/
 │ ├── upload/
 │ └── index.js
 │
-│
 ├── hooks/
 │ ├── useToggle.js
 │ ├── useDebounce.js
@@ -136,7 +138,6 @@ src/
 │ ├── usePermissions.js
 │ └── index.js
 │
-│
 ├── utils/
 │ ├── formatters.js
 │ ├── validators.js
@@ -146,7 +147,6 @@ src/
 │ ├── storage.js
 │ ├── logger.js
 │ └── index.js
-│
 │
 ├── styles/
 │ ├── jsTokens/
@@ -165,7 +165,6 @@ src/
 │ ├── light.css
 │ └── dark.css
 │
-│
 ├── types/
 │ ├── api.js
 │ ├── common.js
@@ -173,22 +172,8 @@ src/
 │ ├── user.js
 │ └── index.js
 │
-│
 └── assets/
 ├── images/
 ├── icons/
 ├── fonts/
 └── videos/
-=000000000000000000000=
-
-1. Forms & Inputs
-   ✅ Input (already done)
-   ✅ Textarea
-   ✅ Select / Dropdown
-   ✅ Checkbox
-   ✅ Radio
-   ✅ Switch / Toggle
-   ✅ File upload
-   ✅ Date / Time picker
-   Input groups (prefix/suffix icons, buttons inside input)
-   Password visibility toggle

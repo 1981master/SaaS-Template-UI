@@ -1,0 +1,242 @@
+/* layout container */
+.app-layout {
+    display: flex;
+    height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+}
+/* =========================
+   SIDEBAR BASE
+========================= */
+
+.sidebar {
+    width: 240px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        width 0.25s ease,
+        background 0.25s ease;
+}
+
+/* =========================
+   COLLAPSED SIDEBAR
+========================= */
+
+.sidebar.collapsed {
+    width: 70px;
+}
+
+/* =========================
+   TOP CONTROLS
+========================= */
+
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    margin-bottom: 16px;
+}
+
+/* each toggle row */
+.toggle-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+/* labels */
+.toggle-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* hide labels when collapsed */
+.sidebar.collapsed .toggle-label {
+    display: none;
+}
+
+/* =========================
+   SWITCH BUTTON
+========================= */
+
+.sidebar-switch-btn {
+    border: none;
+    background: transparent;
+    padding: 6px;
+    cursor: pointer;
+}
+
+/* track */
+.switch-track {
+    width: 46px;
+    height: 24px;
+
+    border-radius: 999px;
+
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    transition: var(--transition);
+}
+
+/* active */
+.switch-track.on {
+    background: var(--primary);
+}
+
+/* thumb */
+.switch-thumb {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    position: absolute;
+    left: 2px;
+
+    font-size: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: transform 0.25s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+/* slide */
+.switch-track.on .switch-thumb {
+    transform: translateX(22px);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* links */
+.sidebar-link {
+    padding: 10px;
+    border-radius: var(--radius-md);
+
+    color: var(--text);
+    text-decoration: none;
+
+    transition: var(--transition);
+}
+
+/* hover */
+.sidebar-link:hover {
+    background: var(--surface-2);
+}
+
+/* active */
+.sidebar-link.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* compact mode */
+.sidebar.collapsed .sidebar-link {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* main area */
+.main-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    height: 60px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+/* LEFT */
+.left {
+    display: flex;
+    align-items: center;
+}
+
+/* CENTER */
+.center {
+    flex: 1;
+}
+
+/* RIGHT */
+.right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* USER */
+.user {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* BUTTONS */
+.theme-button,
+.logout-button {
+    white-space: nowrap;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    background: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.theme-button:hover,
+.logout-button:hover {
+    background: var(--hover);
+}
+
+/* content */
+.content {
+    flex: 1;
+    padding: 16px;
+    background: var(--surface);
+    overflow-y: auto;
+}
+
+/* footer */
+.footer {
+    height: 50px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    background: var(--bg);
+}

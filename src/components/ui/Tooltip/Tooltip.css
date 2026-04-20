@@ -1,0 +1,76 @@
+/* WRAPPER */
+.tooltip-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* TOOLTIP BASE */
+.tooltip {
+    position: absolute;
+    background: var(--text);
+    color: var(--surface);
+
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: var(--radius-sm);
+
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+
+    transform: translateY(4px);
+    transition: var(--transition);
+
+    z-index: 9999;
+}
+
+/* SHOW ON HOVER */
+.tooltip-wrapper:hover .tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================
+   POSITIONS
+========================= */
+
+.tooltip-top {
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+}
+
+.tooltip-wrapper:hover .tooltip-top {
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-bottom {
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-4px);
+}
+
+.tooltip-wrapper:hover .tooltip-bottom {
+    transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-left {
+    right: 120%;
+    top: 50%;
+    transform: translateY(-50%) translateX(4px);
+}
+
+.tooltip-wrapper:hover .tooltip-left {
+    transform: translateY(-50%) translateX(0);
+}
+
+.tooltip-right {
+    left: 120%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-4px);
+}
+
+.tooltip-wrapper:hover .tooltip-right {
+    transform: translateY(-50%) translateX(0);
+}

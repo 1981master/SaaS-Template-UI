@@ -1,0 +1,24 @@
+/* =========================
+   global.css
+   LAYER 1: BASE STYLES
+========================= */
+
+html,
+body {
+    height: 100%;
+    font-family: var(--font-family);
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* inherited elements */
+button,
+input,
+textarea {
+    font-family: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
