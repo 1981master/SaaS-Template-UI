@@ -1,0 +1,79 @@
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-family: var(--font-family);
+}
+
+/* Variants */
+.accordion.default .accordion-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+}
+
+.accordion.bordered .accordion-item {
+    border: 1px solid var(--border);
+}
+
+.accordion.minimal .accordion-item {
+    border-bottom: 1px solid var(--border);
+}
+
+/* Item */
+.accordion-item {
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.accordion.rounded .accordion-item {
+    border-radius: var(--radius-md);
+}
+
+.accordion.shadow .accordion-item {
+    box-shadow: var(--shadow-sm);
+}
+
+/* Header */
+.accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3);
+    cursor: pointer;
+    background: var(--surface-2);
+    color: var(--text);
+    user-select: none;
+}
+
+/* Title */
+.title {
+    flex: 1;
+}
+
+/* Icon */
+.icon {
+    transition: transform var(--transition);
+    font-size: 0.9rem;
+}
+
+.icon.rotate {
+    transform: rotate(180deg);
+}
+
+/* Content */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 var(--space-3);
+    background: var(--surface);
+    color: var(--text-muted);
+    transition:
+        max-height 0.3s ease,
+        padding 0.3s ease;
+}
+
+/* Open state */
+.accordion-item.open .accordion-content {
+    max-height: 500px; /* enough for most content */
+    padding: var(--space-3);
+}

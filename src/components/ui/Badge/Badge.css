@@ -1,0 +1,92 @@
+.badge-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Base badge */
+.badge {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 999px;
+    padding: 0 6px;
+    min-width: 18px;
+    height: 18px;
+    line-height: 1;
+    box-shadow: var(--shadow-sm);
+    border: 2px solid var(--surface);
+}
+
+/* Sizes */
+.badge-sm {
+    min-width: 14px;
+    height: 14px;
+    font-size: 0.6rem;
+}
+
+.badge-md {
+    min-width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+}
+
+.badge-lg {
+    min-width: 22px;
+    height: 22px;
+    font-size: 0.8rem;
+}
+
+/* Dot mode */
+.badge-dot {
+    width: 10px;
+    height: 10px;
+    min-width: unset;
+    padding: 0;
+}
+
+/* Variants */
+.badge-primary {
+    background: var(--primary);
+}
+
+.badge-success {
+    background: var(--success);
+}
+
+.badge-warning {
+    background: var(--warning);
+    color: #000;
+}
+
+.badge-error {
+    background: var(--error);
+}
+
+/* Positions */
+.badge-top-right {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.badge-top-left {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+.badge-bottom-right {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
+
+.badge-bottom-left {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+}

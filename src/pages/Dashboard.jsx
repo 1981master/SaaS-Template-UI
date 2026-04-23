@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Accordion from '../components/ui/Accordion'
+import Badge from '../components/ui/Badge'
 import Button from '../components/ui/Button'
 import Checkbox from '../components/ui/Checkbox'
 import DateTimePicker from '../components/ui/DateTimePicker'
@@ -264,6 +266,50 @@ export default function Dashboard() {
                         Secondary Pill
                     </Tag>
                 </div>
+                <Badge count={9}></Badge>
+                <Accordion
+                    allowMultiple
+                    shadow
+                    items={[
+                        {
+                            title: 'Simple Section',
+                            content: <div>Basic content</div>,
+                        },
+                        {
+                            title: 'Interactive Section',
+                            content: (
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        gap: '10px',
+                                        alignItems: 'center',
+                                    }}
+                                >
+                                    <Button onClick={() => alert('Clicked!')}>
+                                        Click Me
+                                    </Button>
+
+                                    <Button variant="secondary">
+                                        Secondary
+                                    </Button>
+
+                                    <Selection
+                                        options={options}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        placeholder="Choose option"
+                                    />
+                                </div>
+                            ),
+                        },
+                    ]}
+                />
+                <Badge count={5}>
+                    <Button>Messages</Button>
+                </Badge>
+                <Badge count={3}>
+                    <Tag color="primary">Primary</Tag>
+                </Badge>
             </div>
         </div>
     )

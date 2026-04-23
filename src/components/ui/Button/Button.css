@@ -1,10 +1,9 @@
 .btn {
     font-family: var(--font-family);
-    border: 1px solid transparent;
+    border: 1px solid var(--border);
     cursor: pointer;
 
     border-radius: var(--radius-md);
-    transition: var(--transition);
 
     display: inline-flex;
     align-items: center;
@@ -13,12 +12,23 @@
 
     font-weight: 500;
 
-    /* IMPORTANT: ensures theme consistency */
     color: var(--text);
+
+    transition: all 0.18s ease;
+
+    user-select: none;
+
+    /* base depth */
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
+
+    /* subtle glass */
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
 }
 
 /* =========================
-   SIZE S
+   SIZE
 ========================= */
 
 .btn-sm {
@@ -37,50 +47,101 @@
 }
 
 /* =========================
-   VARIANTS (THEME AWARE)
+   PRIMARY (NEON ACCENT)
 ========================= */
 
-/* PRIMARY */
 .btn-primary {
     background: var(--primary);
-    color: #ffffff;
+    color: #fff;
+    border: 1px solid var(--primary);
+
+    box-shadow:
+        0 4px 10px rgba(99, 102, 241, 0.2),
+        0 0 0px rgba(99, 102, 241, 0);
 }
 
 .btn-primary:hover {
+    transform: translateY(-1px);
+
     background: var(--primary-hover);
+    border-color: var(--primary-hover);
+
+    /* soft neon glow */
+    box-shadow:
+        0 6px 14px rgba(99, 102, 241, 0.25),
+        0 0 12px rgba(99, 102, 241, 0.35);
 }
 
-/* SECONDARY */
+.btn-primary:active {
+    transform: translateY(0px) scale(0.98);
+
+    box-shadow:
+        0 2px 6px rgba(99, 102, 241, 0.15),
+        0 0 6px rgba(99, 102, 241, 0.2);
+}
+
+/* =========================
+   SECONDARY (SUBTLE NEON BORDER)
+========================= */
+
 .btn-secondary {
     background: var(--surface);
     color: var(--text);
     border: 1px solid var(--border);
+
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06);
 }
 
 .btn-secondary:hover {
+    transform: translateY(-1px);
+
     background: var(--surface-2);
+
+    /* very subtle neon edge */
+    box-shadow:
+        0 4px 10px rgba(15, 23, 42, 0.08),
+        0 0 8px rgba(99, 102, 241, 0.12);
 }
 
-/* GHOST (IMPORTANT FOR MODAL ICON BUTTONS) */
+/* =========================
+   GHOST (MINIMAL + SOFT GLOW)
+========================= */
+
 .btn-ghost {
     background: transparent;
-    color: var(--text-muted);
     border: 1px solid transparent;
+    color: var(--text-muted);
+    box-shadow: none;
 }
 
 .btn-ghost:hover {
     background: var(--surface-2);
     color: var(--text);
+
+    /* faint glow */
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.08);
 }
 
-/* DANGER */
+/* =========================
+   DANGER (RED NEON LIGHT)
+========================= */
+
 .btn-danger {
-    background: #ef4444;
-    color: #ffffff;
+    background: var(--error);
+    color: #fff;
+    border: 1px solid var(--error);
+
+    box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
 }
 
 .btn-danger:hover {
-    background: #dc2626;
+    transform: translateY(-1px);
+
+    filter: brightness(0.95);
+
+    box-shadow:
+        0 6px 14px rgba(239, 68, 68, 0.25),
+        0 0 12px rgba(239, 68, 68, 0.25);
 }
 
 /* =========================
@@ -90,134 +151,29 @@
 .btn-disabled {
     opacity: 0.5;
     cursor: not-allowed;
+    box-shadow: none !important;
+    transform: none !important;
 }
 
 /* =========================
-   MICRO INTERACTION
+   ICON BUTTON
 ========================= */
 
-.btn:hover:not(.btn-disabled) {
-    transform: translateY(-1px);
-}
-
-/* =========================
-   OPTIONAL: ICON BUTTON FIX (MODAL SUPPORT)
-========================= */
-
-.btn-sm.btn-ghost,
-.btn-md.btn-ghost {
-    line-height: 1;
-}
-
-/* =========================
-   SWITCH (KEEPING YOUR EXISTING UI)
-========================= */
-
-.sidebar-switch {
-    padding: 6px;
-    border-radius: 999px;
-    background: transparent;
-}
-
-/* =========================
-   TRACK (CYLINDER)
-========================= */
-
-.switch-track {
-    width: 44px;
-    height: 24px;
-
-    border-radius: 999px;
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-
-    position: relative;
-
-    display: flex;
-    align-items: center;
-
-    transition: var(--transition);
-}
-
-/* ON state */
-.switch-track.on {
-    background: var(--primary);
-}
-
-/* =========================
-   THUMB (CIRCLE)
-========================= */
-
-.switch-thumb {
-    width: 18px;
-    height: 18px;
-
-    border-radius: 50%;
-    background: #ffffff;
-
-    position: absolute;
-    left: 3px;
-
-    transition: transform 0.25s ease;
-    box-shadow: var(--shadow-sm);
-}
-
-/* MOVE RIGHT WHEN ON */
-.switch-track.on .switch-thumb {
-    transform: translateX(20px);
-}
-.modal-close-btn {
-    width: 32px;
-    height: 32px;
-
-    padding: 0 !important;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 18px;
-    line-height: 1;
-
-    border-radius: var(--radius-md);
-
-    color: var(--text-muted);
-}
-
-.modal-close-btn:hover {
-    transform: rotate(90deg);
-}
-/*Button Icon*/
 .btn-icon {
-    width: 32px;
-    height: 32px;
-
+    width: 36px;
+    height: 36px;
     padding: 0;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    line-height: 1;
-}
-.modal-close-btn {
-    width: 32px;
-    height: 32px;
-
-    padding: 0 !important;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 18px;
-    line-height: 1;
-
-    border-radius: var(--radius-md);
-
-    color: var(--text-muted);
+    border-radius: var(--radius-sm);
 }
 
-.modal-close-btn:hover {
-    transform: rotate(90deg);
+/* =========================
+   FOCUS (NEON RING)
+========================= */
+
+.btn:focus-visible {
+    outline: none;
+
+    box-shadow:
+        0 0 0 3px rgba(99, 102, 241, 0.25),
+        0 0 10px rgba(99, 102, 241, 0.2);
 }
